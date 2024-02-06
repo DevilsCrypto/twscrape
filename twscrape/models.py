@@ -161,6 +161,7 @@ class Tweet(JSONTrait):
     replyCount: int
     retweetCount: int
     likeCount: int
+    bookmarkCount: int
     quoteCount: int
     conversationId: int
     hashtags: list[str]
@@ -215,6 +216,7 @@ class Tweet(JSONTrait):
             replyCount=obj["reply_count"],
             retweetCount=obj["retweet_count"],
             likeCount=obj["favorite_count"],
+            bookmarkCount=obj["bookmark_count"],
             quoteCount=obj["quote_count"],
             conversationId=int(obj["conversation_id_str"]),
             hashtags=[x["text"] for x in get_or(obj, "entities.hashtags", [])],
